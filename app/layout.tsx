@@ -22,7 +22,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <DsfrProvider lang={lang}>
           <StartDsfrOnHydration />
           <Header />
-          <div className="fr-container fr-py-4v">{children}</div>
+          <div className="fr-py-4v fr-container" style={{ paddingLeft: 0, paddingRight: 0 }}>
+            {children}
+          </div>
           <Newsletter />
           <Footer />
         </DsfrProvider>
