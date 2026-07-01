@@ -5,19 +5,29 @@ import { usePathname } from "next/navigation";
 
 const navItems = [
   {
-    title: "J'ai besoin de soutien",
-    path: "/besoin-de-soutien",
-    key: "need",
+    title: "Je ressens...",
+    paths: [
+      {
+        path: "/je-ressens/anxiete",
+        title: "Je ressens du stress ou de l'anxieté",
+      },
+      {
+        path: "/je-ressens/fatigue",
+        title: "Je ressens de l'épuisement ou un manque d'énergie ",
+      },
+    ],
   },
   {
-    title: "Je veux comprendre",
-    path: "/comprendre",
-    key: "/understand",
+    title: "Trouver du soutien",
+    path: "/trouver-du-soutien",
   },
   {
-    title: "Je veux aider",
-    path: "/aider",
-    key: "help",
+    title: "S'informer",
+    path: "/articles",
+  },
+  {
+    title: "Aider un proche",
+    path: "/aider-un-proche",
   },
 ];
 
@@ -40,7 +50,16 @@ export function Header() {
       }}
       navigation={navItems.map((item) => ({
         text: item.title,
-        linkProps: { target: "self", href: item.path },
+        ...(item.path
+          ? { linkProps: { target: "self", href: item.path } }
+          : {
+              menuLinks: item.paths?.map((it) => ({
+                linkProps: {
+                  href: it.path,
+                },
+                text: it.title,
+              })),
+            }),
         isActive: pathname === item.path,
       }))}
       serviceTagline="Prendre soin de sa santé mentale quand on est étudiant"
