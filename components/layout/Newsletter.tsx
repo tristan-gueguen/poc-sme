@@ -8,7 +8,7 @@ export function Newsletter() {
         buttonProps: {
           onClick: function noRefCheck() {},
         },
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.",
+        desc: "On partage régulièrement des conseils, des ressources et des témoignages pour prendre soin de ta santé mentale. Inscris-toi pour les recevoir directement dans ta boîte mail.",
       }}
       social={{
         buttons: [
