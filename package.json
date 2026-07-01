@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "react-dsfr update-icons && next dev --turbopack",
+    "build": "react-dsfr update-icons && next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "@codegouvfr/react-dsfr": "^1.32.2",
     "next": "16.2.7",
     "react": "19.2.4",
     "react-dom": "19.2.4"
@@ -19,6 +20,9 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.7",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.8.3",
+    "sass": "^1.100.0",
     "typescript": "^5"
   }
 }
