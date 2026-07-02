@@ -12,7 +12,7 @@ export default function LaunchOrienteurCard() {
           Réponds à quelques questions pour trouver l'aide la plus adaptée à ta situation (ou pour
           aider un proche)
         </p>
-        <Button size="large" className={styles.fullWidthBtn}>
+        <Button size="large" linkProps={{ href: "/orienteur" }} className={styles.fullWidthBtn}>
           Trouver l'aide adaptée
         </Button>
         <p className={styles.hint}>
